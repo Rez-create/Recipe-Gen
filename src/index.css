@@ -1,0 +1,96 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 33% 98%;
+    --foreground: 24 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 24 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 24 10% 10%;
+
+    --primary: 24 94% 53%;
+    --primary-foreground: 60 9% 98%;
+
+    --secondary: 84 44% 42%;
+    --secondary-foreground: 60 9% 98%;
+
+    --muted: 30 10% 92%;
+    --muted-foreground: 25 5% 45%;
+
+    --accent: 84 44% 42%;
+    --accent-foreground: 60 9% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9% 98%;
+
+    --border: 20 5% 90%;
+    --input: 20 5% 90%;
+    --ring: 24 5% 64%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 20 14% 4%;
+    --foreground: 60 9% 98%;
+
+    --card: 20 14% 8%;
+    --card-foreground: 60 9% 98%;
+
+    --popover: 20 14% 8%;
+    --popover-foreground: 60 9% 98%;
+
+    --primary: 24 94% 53%;
+    --primary-foreground: 60 9% 98%;
+
+    --secondary: 84 44% 42%;
+    --secondary-foreground: 60 9% 98%;
+
+    --muted: 12 6% 15%;
+    --muted-foreground: 24 5% 64%;
+
+    --accent: 84 44% 42%;
+    --accent-foreground: 60 9% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 60 9% 98%;
+
+    --border: 12 6% 15%;
+    --input: 12 6% 15%;
+    --ring: 24 5% 64%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .recipe-card {
+    @apply bg-white dark:bg-card rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300;
+  }
+  
+  .input-search {
+    @apply bg-white dark:bg-card border-2 border-muted focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none rounded-full px-4 py-2 w-full transition-all duration-200;
+  }
+  
+  .tab-active {
+    @apply bg-primary text-white rounded-full px-4 py-1 font-medium;
+  }
+  
+  .tab-inactive {
+    @apply text-foreground opacity-80 px-4 py-1 hover:opacity-100;
+  }
+}
